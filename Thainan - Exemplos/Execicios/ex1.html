@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Aula de Exercicios - Curso Javascript</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			html, body{
+				width: 100%;
+				height: 100%;
+				font-family: Arial;
+			}
+			body{
+				background-color: #E8AA00;
+				opacity: 0.8;
+			}
+			.fundo{
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.dia{
+				background-color: #fff;
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				border-radius: 20px;
+				box-shadow: 2px 2px 15px;
+			}
+			h1{
+				margin-top: 50px;
+				margin-bottom: 50px;
+				color: #fff;
+			}
+			h3{
+				text-align: center;
+				margin-top: 30px;
+			}
+			img{
+				width: 280px;
+				height: 250px;
+				margin-top: 15px;
+				margin-bottom: 50px;
+				border-radius: 50%;
+			}
+			strong{
+				margin-top: 25px;
+				font-size: 20px;
+				color: #fff;
+			}
+		</style>
+
+	</head>
+	<body  onload="clicar()">
+		<div class="fundo">
+			<h1>QUE HORAS SÃO?</h1>
+			<div class="dia">
+				<h3 id="msg">Agora são X horas do dia</h3>
+				<img src="img/dia.jpg" id="img">
+			</div>
+			<strong>&copy;Thainan de Sousa</strong>
+		</div>
+		<script type="text/javascript">
+			function clicar(){
+				var relogio = new Date()
+				var hora = relogio.getHours()
+				var minutos = relogio.getMinutes()
+				var msg = document.querySelector('#msg')
+				var img = document.querySelector('#img')
+				var cor = document.querySelector('.fundo')
+					
+				if (hora >=0 && hora <=12) {
+					msg.innerHTML = `Bom dia! Agora são ${hora} horas e ${minutos} minutos`
+					img.src = 'img/dia.jpg'
+					document.body.style.background = '#E8AA00'
+				}else if(hora >12 && hora <18){
+					msg.innerHTML = `Boa tarde! Agora são ${hora} horas e  ${minutos} minutos`
+					img.src = 'img/tarde.jpg'
+					document.body.style.background = 'green'
+				}else{
+					msg.innerHTML = `Boa Noite! Agora são ${hora} horas e ${minutos} minutos`
+					img.src = 'img/noite.jpg'
+					document.body.style.background = 'black'
+				}
+		}
+		</script>
+	</body>
+</html>

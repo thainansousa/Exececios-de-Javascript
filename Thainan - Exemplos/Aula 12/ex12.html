@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Aula 12 Javascript</title>
+		<style type="text/css">
+		
+		body{
+			background-color: #5697B3;
+			color: #fff;
+			font-family: Arial;
+		}
+
+		h1{
+			text-align: center;
+			margin-top: 50px;
+			color: #E3B600;
+		}
+		h3{
+			text-align: center;
+		}
+
+		.caixa{
+			width: 200px;
+			border: none;
+			padding: 10px;
+			border-radius: 10px;
+			margin-top: 10px;
+		}
+		.btn{
+			margin-right: 30px;
+			border: none;
+			padding: 10px;
+			border-radius: 10;
+			cursor: pointer;
+			border-radius: 10px;
+			font-weight: bold;
+			color: #fff;
+			background-color: #10A300;
+			margin-bottom: 10px;
+			margin-left: 180px;
+			margin-top: 10px;
+		}
+		.btn:hover{
+			opacity: 0.7;
+		}
+		.caixa{
+			width: 380px;
+			border: none;
+			padding: 10px;
+			border-radius: 10px;
+			margin-left: 180px;
+		}
+	</style>
+	</head>
+		<body>
+			<div>
+				<h1>AULA 12 - JAVASCRIPT</h1>
+				<h3>Comando Switch</h3>
+			</div>
+			<div>
+				<h1>#boracodar</h1>
+			</div>
+				<script type="text/javascript">
+					var n1 = Number(prompt('Digite um número: '))
+					var n2 = Number(prompt('Digite outro número: '))
+					var n = prompt('Digite 1 para somar, 2 para subtrair, 3 para multiplicar e 4 para dividir:')
+					var num = Number(n)
+
+					switch(num){
+						case 1:
+							var resultado = n1 + n2
+							alert(`A soma entre ${n1} + ${n2} é: ${resultado}`)
+							break
+						case 2: 
+							var resultado = n1 - n2
+							alert(`A subtração entre ${n1} - ${n2} é: ${resultado}`)
+							break
+						case 3:
+							var resultado = n1 * n2
+							alert(`A multiplicação entre ${n1} * ${n2} é: ${resultado}`)
+							break
+						case 4: 
+							var resultado = n1 / n2
+							alert(`A divisão entre ${n1} / ${n2} é: ${resultado}`)
+							break
+						default:
+							alert( num +' É um número invalido, tente novamente')
+							break
+						
+					}
+
+				</script>
+		</body>
+</html>

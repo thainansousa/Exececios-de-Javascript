@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 15 Javascript</title>
+        <style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			html, body{
+				width: 100%;
+				height: 100%;
+				font-family: Arial;
+			}
+			body{
+				background-color: #4584FF;
+				opacity: 0.8;
+			}
+			.fundo{
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.dia{
+				background-color: #fff;
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				border-radius: 20px;
+				box-shadow: 2px 2px 15px;
+				padding: 15px;
+			}
+			h1{
+				margin-top: 50px;
+				margin-bottom: 20px;
+				color: #fff;
+			}
+			h3{
+				text-align: center;
+                color: #fff;
+                margin-bottom: 20px;
+			}
+			img{
+				width: 280px;
+				height: 250px;
+				margin-top: 30px;
+				border-radius: 50%;
+			}
+			strong{
+				margin-top: 25px;
+				font-size: 20px;
+				color: #fff;
+			}
+			input{
+				width: 50%;
+				padding: 10px;
+				border: 1px solid black;
+				border-radius: 10px;
+				margin-bottom: 10px;
+				outline: none;
+			}
+			#btn{
+				width: 20%;
+				padding: 10px;
+				border-radius: 10px;
+				border: 1px solid black;
+				cursor: pointer;
+				font-weight: bold;
+				background-color: #10A300;
+				color: #fff;
+				font-size: 12pt;
+				margin-bottom: 20px;
+			}
+			#btn:hover{
+				opacity: 0.8;
+			}
+			p{
+				color: black;
+				margin-top: 10px;
+				font-weight: bold;
+			}
+            select{
+                width: 120px;
+                padding: 5px;
+            }
+            option{
+                margin-bottom: 2px;;
+                color: #fff;
+            }
+		</style>
+
+	</head>
+	<body onload="carregar()">
+		<div class="fundo">
+            <h1>Variavés compostas</h1>
+            <h3>Vetores || Arrays</h3>
+			<div class="dia">
+                
+			</div>
+			<strong>&copy;Thainan de Sousa</strong>
+		</div>
+		<script type="text/javascript">
+            var numeros = [5, 4, 3, 2, 1]
+            //var divElement = document.querySelector('.dia')
+        function carregar(){
+            //divElement.innerHTML = `O array é composto por ${numeros} <br/><br/>`
+            /*for (posicao = 0; posicao <numeros.length; posicao++) {
+                var vetorElement = `O número ${numeros[posicao]} está na chave ${posicao} <br/>`
+                divElement.innerHTML += vetorElement
+            }*/ //Modo Tradicional
+
+            for(var posicao in numeros){
+                console.log(`O número ${numeros[posicao]} está na chave ${posicao}`)
+                
+            } //Versão simplificado introduzida na nova versão ECMASCRIPT
+        }   
+            // numeros.push() Adiciona um valor no fim do vetor. O valor a ser adicionado tem que ir dentro do ()
+            // numeros.sort() Ordena o vetor em ordem crescente
+            // console.log(numeros.indexOf(2)) A Propriedade indexOf(), retorna em qual chave está o número passando dentro dos ()
+            // Caso seja passado um valor que não existe dentro do indexOf(), será retornado o valor -1
+		</script>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Aula 10 Javascript</title>
+		<style type="text/css">
+		
+		body{
+			background-color: #5697B3;
+			color: #fff;
+			font-family: Arial;
+		}
+
+		h1{
+			text-align: center;
+			margin-top: 50px;
+			color: #E3B600;
+		}
+		h3{
+			text-align: center;
+		}
+
+		.caixa{
+			width: 200px;
+			border: none;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		.btn{
+			margin-right: 30px;
+			border: none;
+			padding: 10px;
+			border-radius: 10;
+			cursor: pointer;
+			border-radius: 10px;
+			font-weight: bold;
+			color: #fff;
+			background-color: #10A300;
+			margin-left: 640px;
+			margin-bottom: 10px;
+		}
+		.btn:hover{
+			opacity: 0.7;
+		}
+		.caixa{
+			width: 380px;
+			border: none;
+			padding: 10px;
+			border-radius: 10px;
+			margin-left: 180px;
+		}
+	</style>
+	</head>
+		<body>
+			<div>
+				<h1>AULA 11 - JAVASCRIPT</h1>
+				<h3>Sistema de Multa</h3>
+			</div>
+			<div>
+				<h1>Informe os dados necessários para ser realizada a consulta</h1>
+				
+			</div>
+				<form>
+					<input type="text" name="nome" placeholder="Nome Completo" class="caixa" id="nome">
+					<input id="velo" type="number" name="velocidade" placeholder="A quantos Km/h seu veiculo estava quando passou no radar?" class="caixa" min="0"><br/>
+					<input type="submit" name="btn-enviar" value="Calcular" class="btn" onclick="clique()">
+					<input type="reset" name="btn-enviar" value="Limpar" class="btn" style="background-color: #FF3B33" onclick="resetar()">
+				</form>
+			<script type="text/javascript">
+
+					
+				
+				function clique(){
+					var nome = document.querySelector('#nome');
+					var vel = document.querySelector('#velo');
+					var velocidade = Number(vel.value);
+					var nomef = String(nome.value);
+					var multa = (velocidade - 80) * 3.00;
+					
+					if (velocidade<=80){
+						alert(`Olá Sr° ${nomef}, você estava dirigindo a velocidade de ${velocidade}Km/h, e está dentro do permitido. Muito bem!`)
+					}else{
+						alert(`Olá Sr° ${nomef}, você estava dirigindo a velocidade de ${velocidade}Km/h, ultrapassando o limite de velocidade. Sua multa foi calculada no valor de R$ ${multa.toFixed(2).replace('.', ',')}`)
+					}
+				};
+
+				function resetar(){
+					confirm('Você realmente desejar limpar todas as caixas?')
+				}
+			</script>
+		</body>
+</html>

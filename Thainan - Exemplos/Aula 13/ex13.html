@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Estrutura de Repetições</title>
+	<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			html, body{
+				width: 100%;
+				height: 100%;
+				font-family: Arial;
+			}
+			body{
+				background-color: #4584FF;
+				opacity: 0.8;
+			}
+			.fundo{
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.dia{
+				background-color: #fff;
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				border-radius: 20px;
+				box-shadow: 2px 2px 15px;
+				padding: 15px;
+			}
+			h1{
+				margin-top: 50px;
+				color: #fff;
+			}
+			h3{
+				text-align: center;
+				margin-top: 30px;
+				color: #fff;
+				margin-bottom: 10px;
+			}
+			img{
+				width: 280px;
+				height: 250px;
+				margin-top: 30px;
+				border-radius: 50%;
+			}
+			strong{
+				margin-top: 25px;
+				font-size: 20px;
+				color: #fff;
+			}
+			#btn{
+				width: 20%;
+				padding: 10px;
+				border-radius: 10px;
+				border: 1px solid black;
+				cursor: pointer;
+				font-weight: bold;
+				background-color: #10A300;
+				color: #fff;
+				font-size: 12pt;
+			}
+			#btn:hover{
+				opacity: 0.8;
+			}
+			p{
+				color: black;
+				margin-top: 10px;
+				font-weight: bold;
+			}
+		</style>
+
+</head>
+	<body onload="pizza()">
+		<div class="fundo">
+			<h1>Aula 13 de Javascript</h1>
+			<h3>Estruturas de repetições</h3>
+			<div class="dia">
+				<div>
+				
+				</div>
+			</div>
+			<strong>&copy;Thainan de Sousa</strong>
+		</div>
+		<script type="text/javascript">
+			/*var c = 8
+			function pizza(){
+				while(c <=8){
+					alert('Você comeu um pedaço de fatia agora restam ' + c)
+					c--
+					if (c == 0) {
+						alert('Você comeu a pizza toda')
+						break
+					}
+					}
+			}*/
+
+			function pizza(){
+				var fatia = 8
+				do {
+					alert(`Você comeu um pedaço da fatia, agora restam ${fatia}`)
+					fatia--
+				}while(fatia >=1){
+					if (fatia == 0) {
+						alert('Você comeu tudo')
+					}
+				}
+			}
+
+		</script>
+	</body>
+</html>

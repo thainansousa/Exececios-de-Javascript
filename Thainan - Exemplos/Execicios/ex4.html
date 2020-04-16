@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula de Exercicios Javascript</title>
+        <style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			html, body{
+				width: 100%;
+				height: 100%;
+				font-family: Arial;
+			}
+			body{
+				background-color: #4584FF;
+				opacity: 0.8;
+			}
+			.fundo{
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.dia{
+				background-color: #fff;
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				border-radius: 20px;
+				box-shadow: 2px 2px 15px;
+				padding: 15px;
+			}
+			h1{
+				margin-top: 50px;
+				margin-bottom: 50px;
+				color: #fff;
+			}
+			h3{
+				text-align: center;
+				margin-top: 30px;
+			}
+			img{
+				width: 280px;
+				height: 250px;
+				margin-top: 30px;
+				border-radius: 50%;
+			}
+			strong{
+				margin-top: 25px;
+				font-size: 20px;
+				color: #fff;
+			}
+			input{
+				width: 50%;
+				padding: 10px;
+				border: 1px solid black;
+				border-radius: 10px;
+				margin-bottom: 10px;
+				outline: none;
+			}
+			#btn{
+				width: 20%;
+				padding: 10px;
+				border-radius: 10px;
+				border: 1px solid black;
+				cursor: pointer;
+				font-weight: bold;
+				background-color: #10A300;
+				color: #fff;
+				font-size: 12pt;
+				margin-bottom: 20px;
+			}
+			#btn:hover{
+				opacity: 0.8;
+			}
+			p{
+				color: black;
+				margin-top: 10px;
+				font-weight: bold;
+			}
+            select{
+                width: 120px;
+                padding: 5px;
+            }
+            option{
+                margin-bottom: 2px;;
+                color: #fff;
+            }
+		</style>
+
+	</head>
+	<body>
+		<div class="fundo">
+			<h1>Tabuada</h1>
+			<div class="dia">
+				<div>
+					<input type="number" placeholder="Informe o número que deseja ver a tabuada" id="n1"><br/>
+					<button onclick="clicando()" id="btn">Ver Tabuada</button>
+				</div>
+				<div>
+                    <select id="seltabsoma" size="10"><option>Soma</option></select>
+                    <select id="seltabsub" size="10"><option>Subtração</option></select>
+                    <select id="seltabmult" size="10"><option>Multiplicação</option></select>
+                    <select id="seltabdiv" size="10"><option>Divisão</option></select>
+				</div>
+			</div>
+			<strong>&copy;Thainan de Sousa</strong>
+		</div>
+		<script type="text/javascript">
+			var inputElementn1 = document.querySelector('#n1')
+            var selectElementSoma = document.querySelector('#seltabsoma')
+            var selectElementSub = document.querySelector('#seltabsub')
+            var selectElementMult = document.querySelector('#seltabmult')
+            var selectElementDiv = document.querySelector('#seltabdiv')
+            function clicando(){
+                var n1 = Number(inputElementn1.value)
+				selectElementSoma.innerText = ''
+				selectElementSub.innerText = ''
+				selectElementMult.innerText = ''
+				selectElementDiv.innerText = ''
+                if(inputElementn1.value.length == 0){
+                    alert('ERRO \u{274C}! Por favor, digite um número para que seja exibida sua tabuada!')
+                }else{
+                    for (c = 1; c <=10; c++){
+                        var optionElement = document.createElement('option')
+                        optionElement.text = `${n1} + ${c} = ${n1 + c}`
+                        selectElementSoma.appendChild(optionElement)
+                        optionElement.style.fontSize = '12pt'
+                        optionElement.style.color = '#fff'
+                        selectElementSoma.style.backgroundColor = '#4584FF'
+                    }
+                    for (c = 1; c <=10; c++){
+                        var optionElement = document.createElement('option')
+                        optionElement.text = `${n1} - ${c} = ${n1 - c}`
+                        selectElementSub.appendChild(optionElement)
+                        optionElement.style.fontSize = '12pt'
+                        optionElement.style.color = '#fff'
+                        selectElementSub.style.backgroundColor = '#4584FF'
+                }
+                for (c = 1; c <=10; c++){
+                        var optionElement = document.createElement('option')
+                        optionElement.text = `${n1} * ${c} = ${n1 * c}`
+                        selectElementMult.appendChild(optionElement)
+                        optionElement.style.fontSize = '12pt'
+                        optionElement.style.color = '#fff'
+                        selectElementMult.style.backgroundColor = '#4584FF'
+                }
+                for (c = 1; c <=10; c++){
+                        var optionElement = document.createElement('option')
+                        optionElement.text = `${n1} / ${c} = ${(n1 / c).toFixed(1)}`
+                        selectElementDiv.appendChild(optionElement)
+                        optionElement.style.fontSize = '12pt'
+                        selectElementDiv.style.backgroundColor = '#4584FF'
+                        
+                }
+                
+            }
+            }
+		</script>
+	</body>
+</html>

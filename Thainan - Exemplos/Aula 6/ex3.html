@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Aula 6 - Javascript</title>
+</head>
+<body>
+	<script>
+	
+		//var n1 = prompt('Digite um número: '); // Ao digitar qualquer valor é considerado como string
+		//var n2 = prompt('Digite outro número: '); // ------------------------------------------------
+		//var s = (n1 + n2); // Por isso que ao executar isso aqui, estava juntando (concatenadno) os dois números digitados
+		//alert('A soma dos dois números é: ' + s);
+
+		// + Faz adição e também concatena
+		// Para usar para adição deve ser feito a conversão dos números usando Number.parseInt ou Number.parseFloat
+
+		/*var n1 = Number.parseFloat(prompt('Digite um número: ATENÇÃO: Não separe as casas decimais caso tenha, por vírgula e sim por pontos. Ex: 10.5'));
+		var n2 = Number.parseFloat(prompt('Digite outro número: ATENÇÃO: Não separe as casas decimais caso tenha, por vírgula e sim por pontos. Ex: 10.5'));
+		var soma = (n1 + n2);
+		alert('A soma dos dos dois números é igual á: ' + soma);*/
+
+		/*var n1 = Number(prompt('Digite um número: ')); // Essa é a versão simplificada, onde o JS vai decidir se é Int ou Float
+		var n2 = Number(prompt('Digite outro número: '));
+		var soma = n1 + n2;
+		alert('A soma dos dois números é: ' + soma);*/
+
+		/*var nome = 'Thainan';
+		var idade = 18;
+		var nota = 10;
+
+		var resultado = `O aluno ${nome}, de ${idade} anos tirou a nota ${nota} na avaliação final`; //Essa é a nova forma de se escrever ums string no JS considerando as formas String(n) e n.toString(). Essa nova forma se chama Template String onde os valores são passados dentro de um cifrão $, e depois abre e fecha chaves o que é chamado de placeholder.
+		alert(resultado);*/
+
+		confirm('Você está prestes a calcular o seu sálario liquído, dê um OK para continuarmos!');
+		var salario = Number(prompt('Digite o seu sálario fixo: OBS: Sem adicionais'));
+		var adicionais = Number(prompt('Agora digite os adicionais'));
+		var total = salario + adicionais;
+		var descontos = 300;
+
+		var sliquido = (salario + adicionais) - descontos;
+
+		alert(`O seu sálario fixo é de R$ ${salario}, tendo os adicionais no valor de R$ ${adicionais}, e um valor total de R$ ${total}, tendo também um desconto de R$ ${descontos} e um sálario líquido de R$ ${sliquido}.`)
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Aula 6 JavaScript</title>
+	<style type="text/css">
+		
+		body{
+			background-color: #5697B3;
+			color: #fff;
+			font-family: Arial;
+		}
+		h1{
+			text-align: center;
+			margin-top: 50px;
+		}
+		h3{
+			text-align: center;
+		}
+		p{
+			font-size: 16pt;
+			color: #E6C972;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>AULA 6 DE JAVASCRIPT</h1>
+	<h3>Aprendendo sobre tratamento de dados</h3>
+
+	<script>
+		
+	/*confirm('Você está prestes a calcular o seu sálario liquído, dê um OK para continuarmos!');
+		var salario = Number(prompt('Digite o seu sálario fixo: OBS: Sem adicionais'));
+		var adicionais = Number(prompt('Agora digite os adicionais'));
+		var total = salario + adicionais;
+		var descontos = 300;
+
+		var sliquido = (salario + adicionais) - descontos;
+
+		document.write(`<p>O seu sálario fixo é de R$ ${salario}, tendo os adicionais no valor de R$ ${adicionais}, e um valor total de R$ ${total}, tendo também um desconto de R$ ${descontos} e um sálario líquido de R$ ${sliquido}.</p>`)*/
+
+		/*var nome = prompt('Digite seu nome: ');
+		document.write(`<p>Seu nome é ${nome} e tem ${nome.length} letras</p>`);
+		document.write(`<p>Seu nome em maiúsculo fica ${nome.toUpperCase()}</p>`);
+		document.write(`<p>Seu nome em minúsculo fica ${nome.toLowerCase()}</p>`);*/
+
+		var n1 = Number(prompt('Digite um número: Atenção: Caso digite um número que possua casas decimais use o ponto no lugar da virgula'));
+
+		//document.write(`O número digitado foi ${n1} e esse número formatado no padrão BR fica ${n1.toFixed(2)} `) esse comando toFixed() adiciona casas decimais.
+		//document.write(`<p>O número digitado foi ${n1} e esse número formatado no padrão BR passando a ser ${n1.toFixed(2).replace('.',',')} </p>`); // e esse comando toFixed().replace('', '') troca uma coisa por outra como exemplo foi trocado a ponto pela virgula
+		document.write(`<p>O número digitado foi ${n1} e esse número formatado no padrão BR passa a ser ${n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} </p>`); // e esse comando tras o valor digitado par o estilo monetario do brasil. Sendo USD para o EUA e EUR para o Euro.
+
+	</script>
+</body>
+</html>

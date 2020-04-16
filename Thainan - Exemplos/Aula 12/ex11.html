@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Aula 12 Javascript</title>
+		<style type="text/css">
+		
+		body{
+			background-color: #5697B3;
+			color: #fff;
+			font-family: Arial;
+		}
+
+		h1{
+			text-align: center;
+			margin-top: 50px;
+			color: #E3B600;
+		}
+		h3{
+			text-align: center;
+		}
+
+		.caixa{
+			width: 200px;
+			border: none;
+			padding: 10px;
+			border-radius: 10px;
+			margin-top: 10px;
+		}
+		.btn{
+			margin-right: 30px;
+			border: none;
+			padding: 10px;
+			border-radius: 10;
+			cursor: pointer;
+			border-radius: 10px;
+			font-weight: bold;
+			color: #fff;
+			background-color: #10A300;
+			margin-bottom: 10px;
+			margin-left: 180px;
+			margin-top: 10px;
+		}
+		.btn:hover{
+			opacity: 0.7;
+		}
+		.caixa{
+			width: 380px;
+			border: none;
+			padding: 10px;
+			border-radius: 10px;
+			margin-left: 180px;
+		}
+	</style>
+	</head>
+		<body>
+			<div>
+				<h1>AULA 12 - JAVASCRIPT</h1>
+				<h3>Urna Online</h3>
+			</div>
+			<div>
+				<h1>Informe os dados necessários para ser feito a votação</h1>
+			</div>
+				<form>
+					<input type="text" placeholder="Nome Completo" id="nome" class="caixa"><br/>
+					<input type="number" placeholder="Idade" id="idade" class="caixa" min="12"><br/>
+					<input type="text" placeholder="Nome do Candidato" id="candidato" class="caixa"><br/>
+					<input type="number" placeholder="Número do Candidato" id="ncandidato" class="caixa"><br/>
+					<input type="submit" value="VOTAR" onclick="clicar()" class="btn">
+					<input type="reset" value="LIMPAR" class="btn" style="background-color: #FF3B33;">
+				</form>
+			<script type="text/javascript">
+				function clicar(){
+					var nome = document.querySelector('#nome')
+					var idade = document.querySelector('#idade')
+					var candidato = document.querySelector('#candidato')
+					var ncandidato = document.querySelector('#ncandidato')
+					var nomef = String(nome.value)
+					var idadef = Number(idade.value)
+					var candidatof = String(candidato.value)
+					var ncandidatof = Number(ncandidato.value)
+					var horario = new Date()
+					var hora = horario.getHours()
+					var minutos = horario.getMinutes()
+					var segundos = horario.getSeconds()
+					var dia = horario.getUTCDate()
+					var mes = horario.getMonth()
+					var ano = horario.getFullYear()
+
+					if (idadef<16) {
+						alert(`Olá ${nomef}, infelizmente com ${idadef} anos, ainda não é possivel votar, tente novamente na próxima eleição!`)
+					}else if(idadef<18 || idadef>65){
+						confirm(`Olá ${nomef}, com ${idadef} anos, o voto ele se torna opcional, tem certeza que deseja votar?`)
+						alert(`Seu voto para o candidato ${candidatof}(ª) de número ${ncandidatof}, foi computado com sucesso! Horario do Voto: ${hora}h${minutos}:${segundos}`)
+					}else{
+						alert(`Olá ${nomef}, seu voto para o candidato ${candidatof}(ª) de número ${ncandidatof}, foi computado com sucesso! Horario do Voto: ${hora}h${minutos}:${segundos} no dia ${dia}/${mes}/${ano}. ${time}`)
+					}
+				}
+
+			</script>
+		</body>
+</html>

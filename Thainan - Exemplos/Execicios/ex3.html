@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Aula de Exercicios - Curso Javascript</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			html, body{
+				width: 100%;
+				height: 100%;
+				font-family: Arial;
+			}
+			body{
+				background-color: #4584FF;
+				opacity: 0.8;
+			}
+			.fundo{
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.dia{
+				background-color: #fff;
+				width: 50%;
+				display: flex;
+				flex-direction: column;
+				border-radius: 20px;
+				box-shadow: 2px 2px 15px;
+				padding: 15px;
+			}
+			h1{
+				margin-top: 50px;
+				margin-bottom: 50px;
+				color: #fff;
+			}
+			h3{
+				text-align: center;
+				margin-top: 30px;
+			}
+			img{
+				width: 280px;
+				height: 250px;
+				margin-top: 30px;
+				border-radius: 50%;
+			}
+			strong{
+				margin-top: 25px;
+				font-size: 20px;
+				color: #fff;
+			}
+			input{
+				width: 50%;
+				padding: 10px;
+				border: 1px solid black;
+				border-radius: 10px;
+				margin-bottom: 10px;
+				outline: none;
+			}
+			#btn{
+				width: 20%;
+				padding: 10px;
+				border-radius: 10px;
+				border: 1px solid black;
+				cursor: pointer;
+				font-weight: bold;
+				background-color: #10A300;
+				color: #fff;
+				font-size: 12pt;
+				margin-bottom: 20px;
+			}
+			#btn:hover{
+				opacity: 0.8;
+			}
+			p{
+				color: black;
+				margin-top: 10px;
+				font-weight: bold;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="fundo">
+			<h1>Contador Númerico</h1>
+			<div class="dia">
+				<div>
+					<input type="number" placeholder="Informe o número inicial" id="n1"><br/>
+					<input type="number" placeholder="Informe o número final" id="n2"><br/>
+					<input type="number" placeholder="Informe o passo" id="passo" min="0"><br/>
+					<button onclick="clicando()" id="btn">Calcular</button>
+				</div>
+				<div id="msg">
+					<p>Preencha os dados acima para ver o resultado</p>
+				</div>
+			</div>
+			<strong>&copy;Thainan de Sousa</strong>
+		</div>
+		<script type="text/javascript">
+			
+			function clicando(){
+				
+				var inputElementn1 = document.querySelector('#n1')
+				var inputElementn2 = document.querySelector('#n2')
+				var inputElementpasso = document.querySelector('#passo')
+				if (inputElementn1.value.length == 0 || inputElementn2.value.length ==0 || inputElementpasso.value.length ==0) {
+					alert('ERRRO \u{274C}! Verifique se todos os dados foram informados e tente novamente')
+				}else{
+					var msg = document.querySelector('#msg')
+					var n1 = Number(inputElementn1.value)
+					var n2 = Number(inputElementn2.value)
+					var passo = Number(inputElementpasso.value)
+				}
+				if (passo <=0) {
+					alert(`PASSO INVALIDO \u{274C}! O passo não pode ser menor ou igual á 0, seu passo sera alterado para 1 \u{2705}`)
+					msg.innerHTML = ''
+					passo = 1
+				}else{
+					msg.innerHTML = ''
+				}
+				if ( n1 < n2) {
+				for (var i = n1; i <=n2; i = i += passo) {
+					msg.innerHTML += `${i} \u{1F57A} `
+				}
+				}else{
+					for (var i = n1; i >=n2; i = i -= passo) {
+					msg.innerHTML += `${i} \u{1F57A} `
+				}
+				}
+				msg.innerHTML += `\u{1F3C1}`
+			}
+		</script>
+	</body>
+</html>
